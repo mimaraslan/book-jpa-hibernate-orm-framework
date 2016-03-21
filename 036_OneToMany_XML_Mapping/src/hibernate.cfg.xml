@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!--
+<property name="connection.driver_class">
+		  com.mysql.jdbc.Driver</property>
+<property name="connection.url">
+		  jdbc:mysql://localhost:3306/denemevt</property>
+<property name="connection.username">katerina</property>
+<property name="connection.password">1453</property>
+-->
+
+<property name="connection.driver_class">
+	com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+<property name="connection.url">
+	jdbc:sqlserver://localhost:52633;databaseName=Universite
+</property>
+<property name="connection.username">KATERINA</property>
+<property name="connection.password">1453</property>
+    
+<property name="show_sql">true</property>
+
+<!--
+
+<property name="hbm2ddl.auto">update</property>
+<property name="hbm2ddl.auto">create-drop</property>
+<property name="hbm2ddl.auto">validate</property>
+-->
+<property name="hbm2ddl.auto">create</property>
+
+      <mapping resource="com/mimaraslan/map/Calisan.hbm.xml"/>
+      <mapping resource="com/mimaraslan/map/Departman.hbm.xml"/>
+      
+    </session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

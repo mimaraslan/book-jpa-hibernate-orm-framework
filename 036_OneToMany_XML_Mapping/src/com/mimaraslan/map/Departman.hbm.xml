@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.mimaraslan.map">
+
+    <class name="Departman" table="DEPARTMAN">
+
+ 		<id name="departmanId" 
+ 			type="java.lang.Long" column="DEPARTMAN_ID" >
+			<generator class="native" />
+		</id>
+		
+        <property name="departmanAdi" column="BOLUM_ADI"/>
+	  <!-- 
+		<set name="calisanlar" table="CALISAN" 
+				 inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="departman_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mimaraslan.map.Calisan" />
+        </set>
+       -->              
+       <!-- 
+        <bag name="calisanlar" table="CALISAN"
+                inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="departman_id" not-null="true" />
+            </key>
+            <one-to-many class="com.mimaraslan.map.Calisan" />
+        </bag>
+        -->
+        
+        <!-- 
+        <list name="calisanlar" table="CALISAN"
+        	  inverse="false" cascade="all">
+            <key column="departman_id"  />
+            <list-index column="liste_indeksi" /> 
+            <one-to-many class="com.mimaraslan.map.Calisan" />
+        </list>
+         -->
+          <array name="calisanlar" table="CALISAN"
+      			 inverse="false" cascade="all">  
+           <key column="departman_id"  />
+           <list-index column="liste_indeksi" /> 
+           <one-to-many class="com.mimaraslan.map.Calisan" />
+        </array>      
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

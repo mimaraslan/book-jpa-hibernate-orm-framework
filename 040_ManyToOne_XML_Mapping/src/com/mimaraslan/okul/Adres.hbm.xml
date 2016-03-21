@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ 
+ <class name="com.mimaraslan.okul.Adres" table="ADRES">
+  
+  <meta attribute="class-description">
+  					    Adres sınıfının detayları</meta>
+  
+  <id column="ADRES_ID" name="adresId" type="long">
+   <generator class="native"/>
+  </id>
+  
+  <property column="ADRES_CADDE" generated="never" 
+  lazy="false" length="250" name="cadde" type="string"/>
+  
+  <property column="ADRES_SEHIR" generated="never" 
+  lazy="false" length="50" name="sehir" type="string"/>
+  
+  <property column="ADRES_SEMT" generated="never" 
+  lazy="false" length="50" name="semt" type="string"/>
+  
+  <property column="ADRES_POSTAKODU" generated="never" 
+  lazy="false" length="10" name="postakodu" type="string"/>
+   
+ </class>
+
+</hibernate-mapping>

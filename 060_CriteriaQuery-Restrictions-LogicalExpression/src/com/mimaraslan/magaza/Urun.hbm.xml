@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mimaraslan.magaza.Urun" table="URUN">
+        <id name="urunId" type="int">
+            <column name="URUNID" />
+            <generator class="assigned" />
+        </id>
+        <property name="urunAdi" type="java.lang.String">
+            <column name="URUNADI" />
+        </property>
+        <property name="urunFiyati" type="double">
+            <column name="URUNFIYATI" />
+        </property>
+    </class>
+</hibernate-mapping>

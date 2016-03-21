@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+ <class name="com.mimaraslan.okul.Ders" table="DERS">
+ 
+  <meta attribute="class-description">
+  					Dersler sınıfının detayları</meta>
+ 
+  <id column="DERS_ID" name="dersId" type="long">
+   <generator class="native"/>
+  </id>
+ 
+  <property column="DERS_ADI" generated="never" lazy="false"
+   name="dersAdi" type="string"/>
+   
+ </class>
+ 
+</hibernate-mapping>
+
+

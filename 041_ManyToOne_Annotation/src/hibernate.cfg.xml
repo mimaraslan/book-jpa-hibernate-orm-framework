@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+<property name="connection.driver_class">
+	com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+<property name="connection.url">
+	jdbc:sqlserver://localhost:52633;databaseName=Universite
+</property>
+<property name="connection.username">KATERINA</property>
+<property name="connection.password">1453</property>
+    
+<property name="show_sql">true</property>
+
+        <property name="hbm2ddl.auto">create</property>
+        
+<!--    <mapping resource="com/mimaraslan/okul/Ogrenci.hbm.xml"/>
+        <mapping resource="com/mimaraslan/okul/Adres.hbm.xml"/> -->
+     
+        <mapping class="com.mimaraslan.okul.Ogrenci" />
+        <mapping class="com.mimaraslan.okul.Adres" />
+                 
+    </session-factory>
+</hibernate-configuration>
+
+

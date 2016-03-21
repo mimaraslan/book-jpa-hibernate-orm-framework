@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping 
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.mimaraslan.map.OgrenciBilgisi" 
+		   table="ogrenci_bilgisi"  
+		   catalog="denemevt">
+		<id name="ogrenciId" type="java.lang.Integer">
+			<column name="OGRENCI_ID" ></column>
+			<generator class="foreign">
+				<param name="property">ogrenci</param>
+			</generator>
+		</id>
+				
+		<property name="adres" type="string">
+			<column name="ADRES" length="255" not-null="true" />
+		</property>
+		
+		<property name="kayitNo" type="string">
+			<column name="KAYIT_NO" length="20"  />
+		</property>
+		
+		<property name="telefonNo" type="string">
+			<column name="TELEFON_N0" length="50" />
+		</property>
+		
+		<property name="email" type="string">
+			<column name="EMAIL" length="255" />
+		</property>
+		
+		<property name="dogumTarihi" type="date">
+			<column name="DOGUM_TARIHI" length="10" not-null="true" />
+		</property>
+		
+		<property name="kayitTarihi" type="date">
+			<column name="KAYIT_TARIHI" length="10" not-null="true" />
+		</property>
+		
+		<one-to-one name="ogrenci" 
+					class="com.mimaraslan.map.Ogrenci"
+					constrained="true"/>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

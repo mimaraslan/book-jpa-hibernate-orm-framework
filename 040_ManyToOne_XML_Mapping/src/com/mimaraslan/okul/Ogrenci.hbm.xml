@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+
+ <class name="com.mimaraslan.okul.Ogrenci" table="OGRENCI">
+ 
+  <meta attribute="class-description">
+  						 Öğrenci sınıfının detayları</meta>
+  
+  <id column="OGRENCI_ID" name="ogrenciId" type="long">
+   <generator class="native"/>
+  </id>
+  
+  <property column="OGRENCI_ADI" generated="never" lazy="false"
+   length="100" name="ogrenciAdi" not-null="true" type="string"/>
+   
+  <many-to-one cascade="all" class="com.mimaraslan.okul.Adres"
+   column="OGRENCI_ADRES" name="ogrenciAdres" not-null="true"/>
+   
+ </class>
+ 
+</hibernate-mapping>

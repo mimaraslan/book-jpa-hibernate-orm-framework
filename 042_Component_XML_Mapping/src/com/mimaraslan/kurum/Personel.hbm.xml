@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ <class name="com.mimaraslan.kurum.Personel" table="PERSONEL">
+ 
+  <meta attribute="class-description">
+  								Personel sıfının detayları</meta>
+  <id column="PERSONEL_ID" name="personelId" type="long">
+   <generator class="native"/>
+  </id>
+  
+  <property column="PERSONEL_ADI" generated="never" lazy="false"
+   name="personelAdi" not-null="true" type="string"/>
+   
+  <component class="com.mimaraslan.kurum.Adres" name="personelAdres">
+  
+   <property column="ADRES_CADDE" generated="never" lazy="false"
+    length="250" name="cadde" type="string"/>
+    
+   <property column="ADRES_SEHIR" generated="never" lazy="false"
+    length="50" name="sehir" type="string"/>
+    
+   <property column="ADRES_SEMT" generated="never" lazy="false"
+    length="50" name="semt" type="string"/>
+    
+   <property column="ADRES_POSTAKODU" generated="never" lazy="false"
+    length="10" name="postakodu" type="string"/>
+    
+  </component>
+  
+ </class>
+</hibernate-mapping>
+
+
